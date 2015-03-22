@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Name generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="bootstrap-responsive.min.css" rel="stylesheet" />
+	
+	<style type="text/css">
+		body {
+			text-align:center;
+		}
+		
+		.separator {
+			margin: 25px auto;
+			background: #ccc;
+			height: 1px;
+			width: 15%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	
+		<div  class="row">
+			<div class="span12">
+				<div class="page-header">
+				<h1>LoTR Word Generator</h1>
+				</div>
+				<p>Test, mark3</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<form id="lotr-form" action="#" method="post">
+					<input id="generate" type="button" class="btn-large btn-primary" value="Generate!" />
+				</form>
+			</div>
+			<div class="span12">
+				<h2 id="result"></h2>
+			</div>
+		</div>
+	
+	</div>
+	
+	<script type="text/javascript" src="jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+<!--    <script type="text/javascript">
+        $(document).ready(function() {
+			$("#generate").click(function() {
+				worker.postMessage({messageType:"generate",minLength:5,maxLength:10});
+			});
+		
+			var result = $("#result");
+			var progress = $(".bar");
+			
+			var worker = new Worker("markov-builder.js");
+			worker.addEventListener("message",function(evt) {
+				if (evt.data.messageType==="loaded") {
+					$("#loading").hide();
+					$("#input").show();
+				}
+				else if (evt.data.messageType==="generate")
+				{
+					result.html(evt.data.word);
+				}
+			},false);
+			worker.postMessage({messageType:"load"});
+		});
+    </script>-->
+	
+</body>
+</html>
