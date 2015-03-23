@@ -27,7 +27,8 @@ $(document).ready(function(){
 				randNum -=1
 			}
 		}
-		generate(4);
+		genNum = Math.floor((Math.random() * 20) + 1);
+		generate(genNum);
 		$("#result").empty().html(text);
 
 		return false;
